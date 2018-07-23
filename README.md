@@ -8,7 +8,7 @@ Compatible with git-switch-electron see https://github.com/pluralsight/git-switc
 1. Run the prettyLogs.sh from your git directory
 
 ## Fomatted Output
-<ABBREVIATED_COMMIT_HASH> <RELATIVE_DATE> - <REF_NAMES> <SUBJECT> <AUTHOR> <CO_AUTHORS>
+`<ABBREVIATED_COMMIT_HASH> <RELATIVE_DATE> - <REF_NAMES> <SUBJECT> <AUTHOR> <CO_AUTHORS>`
 
 On a current git branch named 'spike/logging'
 
