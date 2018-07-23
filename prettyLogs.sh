@@ -64,11 +64,15 @@ function extractCoAuthor {
 
 function printCommit {
   if [ ${#coAuthors[@]} -eq 0 ]; then
-    coAuthors=("No Co-Author")
+    coAuthors=""
   else
+    CIFS=$IFS
+    IFS=$OIFS
     coAuthors=$(join_by ', ' "${coAuthors[@]}")
+    IFS=$CIFS
+    coAuthors="($coAuthors)"
   fi
-  echo -e "${CYAN}$commitHash ${YELLOW}$date ${WHITE}-${MAGEN}$branch ${WHITE}$summary ${BLUE}$author ${GREEN}($coAuthors)"
+  echo -e "${CYAN}$commitHash ${YELLOW}$date ${WHITE}-${MAGEN}$branch ${WHITE}$summary ${BLUE}$author ${GREEN}$coAuthors"
 }
 
 function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
